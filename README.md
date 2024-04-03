@@ -1,7 +1,8 @@
 # DevOps-CA
-BSc (Honours) in Computing
-Name: Ruby Kehoe
+1.Name: Ruby Kehoe
 Student Number:x20382263
+2.Name: Conn Fitzgerald
+Student Number: x20394073
 
 
 ---
