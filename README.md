@@ -1,4 +1,4 @@
-# SecureAPP-CA
+# DevOps-CA
 BSc (Honours) in Computing
 Name: Ruby Kehoe
 Student Number:x20382263
