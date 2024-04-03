@@ -1,8 +1,8 @@
 # DevOps-CA
 ---
 Name: Ruby Kehoe
-Student Number:x20382263
----
+Student Number: x20382263
+
 Name: Conn Fitzgerald
 Student Number: x20394073
 
