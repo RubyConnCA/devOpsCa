@@ -6,9 +6,6 @@ Student Number:x20382263
 Name: Conn Fitzgerald
 Student Number: x20394073
 
-
----
-
 # Context
 This project ruses a previous application I have worked as group project, the only compennts that have been aletered are the ones I have developed in the past.
 Previous project: https://github.com/RubyK01/TeamProject2022
