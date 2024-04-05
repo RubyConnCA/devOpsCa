@@ -30,8 +30,6 @@ router.get('/', function(req, res, next) {
 
   // Execute database queries
   connection.query("SELECT * from products WHERE customerID = ?", [customerID], function(err, products) {
-    connection.query("SELECT * from productIMG WHERE customerID = ?", [customerID], function(err, productIMG) {
-      
       // Render the page with fetched data
       res.render('uploadProduct', {
         title: 'uploadProduct',
@@ -39,23 +37,16 @@ router.get('/', function(req, res, next) {
         error: error,
         message: message,
         loggedIn: loggedIn,
-        products: products,
-        productIMG: productIMG
+        products: products
       });
     });
   });
-});
 
 router.post('/upload', async function(req, res, next){
   var customerID = req.session.userID;
   var productName = req.body.productName;
   var price = parseFloat(req.body.price);
 
-  if(!req.files || Object.keys(req.files).length === 0){
-    var errorMessage = "File not uploaded!";
-    var encodedError = encodeURIComponent(errorMessage);
-    return res.redirect("/uploadProduct?error=" + encodedError);
-  }
 
 
   if(price <= 0){
