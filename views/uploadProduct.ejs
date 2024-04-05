@@ -141,12 +141,11 @@
               <button class="reuseabale" type="submit">Submit</button>
             </div>
           </form>
-          <% for(var i = 0; i < products.length && i < productIMG.length; i++) {%>
+          <% for(var i = 0; i < products.length; i++) {%>
             <div class="accountTabs">
               <div class="tabDetail"><%= products[i].productName %>
                 <h3><b>€<%= products[i].price %></b></h3>
               </div>
-              <img src="../userSubmittedProducts/<%= productIMG[i].image %>" alt="productIMG">
             </div>
           <% } %>
         </center>
