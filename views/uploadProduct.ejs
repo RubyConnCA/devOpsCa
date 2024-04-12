@@ -127,12 +127,17 @@
               </div>
             <% } %>
           </div>
+          <!-- changes by Conn -->
           <form action="uploadProduct/upload" method="post" enctype="multipart/form-data">
             <div class="form-group mb-2">
               <input type="text" class="form-control" id="productName" name = "productName" placeholder="Product name" required>
             </div>
             <div class="form-group mb-2">
               <input type="number" class="form-control" id="price" name = "price" placeholder = "€0.00" required>
+            </div>
+            <div class="form-group mb-2">
+              <input type="checkbox" id="hasBox" name="hasBox">
+              <label for="hasBox">Has box?</label>
             </div>
             <div class="space">
               <button class="reuseabale" type="submit">Submit</button>
@@ -142,6 +147,12 @@
             <div class="accountTabs">
               <div class="tabDetail"><%= products[i].productName %>
                 <h3><b>€<%= products[i].price %></b></h3>
+                <!-- Just added that it pulls the data to for the product so that the user can see if it comes with a box or not -->
+                <% if (products[i].hasBox) { %>
+                  <p><b>with box</b></p>
+                <% } else { %>
+                  <p><b>no box</b></p>
+                <% } %>
               </div>
             </div>
           <% } %>

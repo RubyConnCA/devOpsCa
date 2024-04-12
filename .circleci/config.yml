@@ -9,6 +9,7 @@ workflows:
             branches:
               only:
                 - main
+                #
       - hold_for_approval:
           type: approval
           requires:

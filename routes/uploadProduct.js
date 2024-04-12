@@ -42,12 +42,24 @@ router.get('/', function(req, res, next) {
     });
   });
 
+  //changes by Conn
 router.post('/upload', async function(req, res, next){
   var customerID = req.session.userID;
   var productName = req.body.productName;
   var price = parseFloat(req.body.price);
 
+  //From my testing when the box is ticked the console log will say box?: on meaning it has been ticked.
+  //So I made it check to see if it has been set to true or false.
+  //https://stackoverflow.com/questions/9185937/form-submit-checkbox-sets-value-to-on-rather-than-true
+  var hasBox = req.body.hasBox;
+  console.log("Box?: "+hasBox);
 
+  if(hasBox === 'on'){
+    hasBox = true;
+  }
+  else{
+    hasBox = false;
+  }
 
   if(price <= 0){
     var errorMessage = "Price must be a positive value!";
@@ -60,7 +72,7 @@ router.post('/upload', async function(req, res, next){
     return res.redirect("/uploadProduct?error=" + encodedError);
   }
   else{
-    connection.query("INSERT INTO products(productName, price, customerID) VALUES ((?),(?),(?));", [productName, price, customerID]);
+    connection.query("INSERT INTO products(productName, price, customerID, hasBox) VALUES ((?),(?),(?),(?));", [productName, price, customerID, hasBox]);
     var message = "Product uploaded!";
     var encodedMessage = encodeURIComponent(message);
     return res.redirect("/uploadProduct?message=" + encodedMessage);

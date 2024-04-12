@@ -36,7 +36,7 @@ router.post('/auth', async function(req, res) { //https://codeshack.io/basic-log
   var getHashPass = "SELECT * FROM customer WHERE userName = ?";
   connection.query(getHashPass, [userName], async function login(err, results){
     if(results.length){
-      // Where I learned how to use bcrypt https://www.npmjs.com/package/bcrypt
+      // Where Ruby learned how to use bcrypt https://www.npmjs.com/package/bcrypt
       var pass = results[0].pass_word // takes the encrypted password from mysql
       var dbUserName = results[0].userName
       var check = await bcrypt.compare(pass_word,pass); //sees if the input and encrypted password are a match
