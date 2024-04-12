@@ -9,7 +9,8 @@ workflows:
             branches:
               only:
                 - main
-                #
+                #Ruby and Conn were able to figure out how to get the pipeline to ask for permission from the below.
+                #https://stackoverflow.com/questions/75159040/circleci-let-only-team-leaders-team-from-github-to-approve-a-job
       - hold_for_approval:
           type: approval
           requires:
