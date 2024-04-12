@@ -11,15 +11,8 @@ This project ruses a previous application I have worked as group project, the on
 Previous project: https://github.com/RubyK01/TeamProject2022
 ---
 
-#Vulnerabuilites in unsecure branch
-1. In login.js, there is a XSS issue with the redirect for a failed login attempt, localhost:3000/login?&error=""<script>alert('XSS')</script> this url for instance will cause an alert to appear meaning potential much more harmful code could be executed this way.
-2. In login.js, there is a SQL injection vulnerability with the userName variable is it apart of a SQL query.
-3. In signup.js, there is a Sensitive Data Exposure Vulnerability as the new password is added to the database without any hashing or encryption applied to it.
----
-#Applying changes to secure branch
-1. I have encoded the the error message in login.js to prevent XSS.
-2. The query is no longer constructed using the variable prevening SQL injections.
-3. Used brcrypt in order to use salting in order to encrypt new passwords before being saved in db.
+# Application link
+http://3.250.91.159:3000/
 ---
 # Project Dependencies
 1.  bcrypt: 5.0.1
@@ -48,7 +41,7 @@ Previous project: https://github.com/RubyK01/TeamProject2022
 
 ---
 
-# Run the project
+# Run the project locally
 
 1. Open a new cmd terminal window or keep using the same one from the dependencies installation.
 2. Use the 'cd' command to navigate to the project folder if your if your using the window from the dependencies installation go to step 3.
